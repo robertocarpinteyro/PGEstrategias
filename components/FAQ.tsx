@@ -46,7 +46,7 @@ function AccordionItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-body text-[16px] text-pg-black leading-snug pr-8" style={{ fontWeight: 400 }}>
+        <span className="font-body text-[17px] text-pg-black leading-snug pr-8" style={{ fontWeight: 400 }}>
           {faq.q}
         </span>
         <motion.span
@@ -107,10 +107,11 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 16 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-title text-pg-black leading-[1]"
+            className="font-title text-pg-black"
             style={{
               fontSize: "var(--t-h2)",
               fontWeight: 400,
+              lineHeight: "var(--lh-h2)",
               letterSpacing: "var(--ls-h2)",
             }}
           >

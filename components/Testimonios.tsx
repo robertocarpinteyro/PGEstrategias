@@ -152,10 +152,11 @@ export default function Testimonios() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={headInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-title text-pg-black leading-[1]"
+                className="font-title text-pg-black"
                 style={{
                   fontSize: "var(--t-h2)",
                   fontWeight: 400,
+                  lineHeight: "var(--lh-h2)",
                   letterSpacing: "var(--ls-h2)",
                 }}
               >

@@ -217,10 +217,11 @@ export default function Paquetes() {
               initial={{ opacity: 0, y: 16 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-title text-white leading-[1]"
+              className="font-title text-white"
               style={{
                 fontSize: "var(--t-h2)",
                 fontWeight: 400,
+                lineHeight: "var(--lh-h2)",
                 letterSpacing: "var(--ls-h2)",
               }}
             >
@@ -335,8 +336,8 @@ export default function Paquetes() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3
-                className="font-title text-white mb-3 leading-[1]"
-                style={{ fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 400, letterSpacing: "-0.015em" }}
+                className="font-title text-white mb-3"
+                style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 400, lineHeight: "1.0", letterSpacing: "-0.015em" }}
               >
                 ¿No sabes cuál elegir?
               </h3>

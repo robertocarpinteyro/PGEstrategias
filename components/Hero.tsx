@@ -57,10 +57,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-title text-pg-light leading-[0.95] mb-8"
+            className="font-title text-pg-light mb-8"
             style={{
               fontSize: "var(--t-display)",
               fontWeight: 400,
+              lineHeight: "var(--lh-display)",
               letterSpacing: "var(--ls-display)",
             }}
           >
@@ -135,8 +136,7 @@ export default function Hero() {
         className="absolute bottom-0 left-0 right-0 z-[4]"
         style={{
           borderTop: "1px solid rgba(245,245,245,0.08)",
-          background: "rgba(13,13,13,0.7)",
-          backdropFilter: "blur(16px)",
+          background: "#0D0D0D",
         }}
       >
         <div className="flex max-w-[1300px] mx-auto">

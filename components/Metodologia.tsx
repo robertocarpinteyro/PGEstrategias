@@ -67,10 +67,11 @@ export default function Metodologia() {
               initial={{ opacity: 0, y: 16 }}
               animate={headInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-title text-pg-black leading-[1]"
+              className="font-title text-pg-black"
               style={{
                 fontSize: "var(--t-h2)",
                 fontWeight: 400,
+                lineHeight: "var(--lh-h2)",
                 letterSpacing: "var(--ls-h2)",
               }}
             >
@@ -122,8 +123,8 @@ export default function Metodologia() {
                   </span>
                 </div>
                 <h3
-                  className="font-title font-bold text-pg-black mb-3 leading-snug"
-                  style={{ fontSize: "clamp(13px, 1.1vw, 15px)" }}
+                  className="font-title text-pg-black mb-3 leading-snug"
+                  style={{ fontSize: "clamp(13px, 1.1vw, 15px)", fontWeight: 400 }}
                 >
                   {p.title}
                 </h3>
@@ -153,7 +154,7 @@ export default function Metodologia() {
                     {p.dias}
                   </span>
                 </div>
-                <h3 className="font-title font-bold text-pg-black text-[16px] mb-2">{p.title}</h3>
+                <h3 className="font-title text-pg-black text-[16px] mb-2" style={{ fontWeight: 400 }}>{p.title}</h3>
                 <p className="font-body text-[13px] leading-[1.65]" style={{ color: "rgba(13,13,13,0.5)" }}>
                   {p.desc}
                 </p>

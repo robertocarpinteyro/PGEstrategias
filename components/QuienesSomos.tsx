@@ -69,17 +69,18 @@ export default function QuienesSomos() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-title text-white leading-[1]"
+              className="font-title text-white"
               style={{
                 fontSize: "var(--t-h2)",
                 fontWeight: 400,
+                lineHeight: "var(--lh-h2)",
                 letterSpacing: "var(--ls-h2)",
               }}
             >
               No somos una agencia.
               <br />
               Somos{" "}
-              <em className="not-italic" style={{ color: "#A6E22E", fontStyle: "italic" }}>
+              <em style={{ color: "#A6E22E", fontStyle: "italic" }}>
                 growth partners.
               </em>
             </motion.h2>
@@ -126,7 +127,7 @@ export default function QuienesSomos() {
               </p>
               <h3
                 className="font-title text-white mb-4 leading-snug"
-                style={{ fontSize: "var(--t-h3)", fontWeight: 700 }}
+                style={{ fontSize: "var(--t-h3)", fontWeight: 400 }}
               >
                 {s.title}
               </h3>

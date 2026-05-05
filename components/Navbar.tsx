@@ -50,8 +50,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
-          background: scrolled ? "rgba(13,13,13,0.9)" : "transparent",
-          backdropFilter: scrolled ? "blur(16px)" : "none",
+          background: scrolled ? "#0D0D0D" : "transparent",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
         }}
       >

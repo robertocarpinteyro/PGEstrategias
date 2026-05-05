@@ -42,10 +42,11 @@ export default function Contacto() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={headInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-title text-white leading-[1] mb-8"
+                className="font-title text-white mb-8"
                 style={{
                   fontSize: "var(--t-h1)",
                   fontWeight: 400,
+                  lineHeight: "var(--lh-h1)",
                   letterSpacing: "var(--ls-display)",
                 }}
               >
