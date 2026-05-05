@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,11 +12,20 @@
   --pg-lime-dim: rgba(166, 226, 46, 0.12);
   --font-title: 'Syne', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Editorial type scale */
+  --t-display: clamp(60px, 9.5vw, 128px);
+  --t-h1: clamp(40px, 6vw, 80px);
+  --t-h2: clamp(34px, 5vw, 68px);
+  --t-h3: clamp(18px, 2vw, 26px);
+
+  /* Letter spacing */
+  --ls-display: -0.03em;
+  --ls-h2: -0.02em;
+  --ls-label: 0.14em;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--pg-black);
@@ -25,20 +34,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: var(--pg-black);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(166, 226, 46, 0.3);
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--pg-lime);
-}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--pg-black); }
+::-webkit-scrollbar-thumb { background: rgba(166, 226, 46, 0.2); }
+::-webkit-scrollbar-thumb:hover { background: var(--pg-lime); }
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -47,19 +46,17 @@ body {
   }
 }
 
-/* Utility: lime accent text */
 .text-lime { color: var(--pg-lime); }
 .bg-lime { background-color: var(--pg-lime); }
 .border-lime { border-color: var(--pg-lime); }
 
-/* Noise grain overlay */
 .grain::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 128px 128px;

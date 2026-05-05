@@ -41,67 +41,96 @@ export default function QuienesSomos() {
   const gridRef = useRef(null);
   const gridInView = useInView(gridRef, { once: true, margin: "-60px" });
 
+  const difRef = useRef(null);
+  const difInView = useInView(difRef, { once: true, margin: "-60px" });
+
   return (
-    <section id="servicios" className="py-36" style={{ background: "#0D0D0D" }}>
-      <div className="max-w-[1200px] mx-auto px-8 md:px-12">
+    <section id="servicios" className="py-40" style={{ background: "#0D0D0D" }}>
+      <div className="max-w-[1300px] mx-auto px-8 md:px-16">
 
         {/* Bloque A — Manifiesto */}
-        <div ref={ref} className="mb-28">
+        <div
+          ref={ref}
+          className="mb-32 pt-8"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        >
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="font-body text-[11px] uppercase tracking-[0.15em] mb-8"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+            className="font-body text-[11px] uppercase tracking-[var(--ls-label)] mb-10"
+            style={{ color: "rgba(255,255,255,0.35)" }}
           >
             Quiénes somos
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-title text-white leading-[1.25] mb-10"
-            style={{ fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 400 }}
-          >
-            No somos una agencia de marketing tradicional.
-            <br />
-            Somos{" "}
-            <span className="italic" style={{ color: "#A6E22E" }}>
-              growth partners.
-            </span>
-          </motion.h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-title text-white leading-[1]"
+              style={{
+                fontSize: "var(--t-h2)",
+                fontWeight: 400,
+                letterSpacing: "var(--ls-h2)",
+              }}
+            >
+              No somos una agencia.
+              <br />
+              Somos{" "}
+              <em className="not-italic" style={{ color: "#A6E22E", fontStyle: "italic" }}>
+                growth partners.
+              </em>
+            </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-body text-[18px] leading-[1.7] max-w-[640px]"
-            style={{ color: "rgba(255,255,255,0.65)" }}
-          >
-            Trabajamos con negocios que ya saben cómo funciona lo que venden.
-            Nuestra labor es construir el sistema digital que convierte esa claridad en clientes.
-          </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p
+                className="font-body text-[17px] leading-[1.75] mb-8"
+                style={{ color: "rgba(255,255,255,0.55)" }}
+              >
+                Trabajamos con negocios que ya saben cómo funciona lo que venden.
+                Nuestra labor es construir el sistema digital que convierte esa claridad en clientes.
+              </p>
+              <a
+                href="#contacto"
+                className="font-body text-[13px] tracking-[0.1em] uppercase inline-flex items-center gap-3 transition-colors duration-500 hover:text-pg-lime"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+              >
+                Hablemos <span style={{ color: "#A6E22E" }}>→</span>
+              </a>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Bloque B — 4 columnas */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        {/* Bloque B — 4 columnas de servicios */}
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {servicios.map((s, i) => (
             <motion.div
               key={s.num}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={gridInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 + 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="pt-8 pr-8 pb-4 lg:pr-10"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+              transition={{ duration: 0.5, delay: i * 0.08 + 0.1 }}
+              className="pt-8 pb-8 pr-0 lg:pr-10"
+              style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
             >
-              <p className="font-body text-[11px] mb-5 font-mono" style={{ color: "rgba(255,255,255,0.3)" }}>
+              <p
+                className="font-body text-[11px] mb-6 tabular-nums"
+                style={{ color: "rgba(255,255,255,0.25)", letterSpacing: "0.06em" }}
+              >
                 {s.num}
               </p>
-              <h3 className="font-title font-bold text-white text-[16px] mb-3">
+              <h3
+                className="font-title text-white mb-4 leading-snug"
+                style={{ fontSize: "var(--t-h3)", fontWeight: 700 }}
+              >
                 {s.title}
               </h3>
-              <p className="font-body text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p className="font-body text-[13px] leading-[1.7]" style={{ color: "rgba(255,255,255,0.48)" }}>
                 {s.desc}
               </p>
             </motion.div>
@@ -109,32 +138,42 @@ export default function QuienesSomos() {
         </div>
 
         {/* Bloque C — Diferenciadores */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-20 pt-16"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        <div
+          ref={difRef}
+          className="mt-24 pt-16"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={difInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+            className="font-body text-[11px] uppercase tracking-[var(--ls-label)] mb-10"
+            style={{ color: "rgba(255,255,255,0.25)" }}
+          >
+            Por qué PG
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-0">
             {diferenciadores.map((d, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-3"
+                initial={{ opacity: 0 }}
+                animate={difInView ? { opacity: 1 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                className="flex items-start gap-4 py-4"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
               >
-                <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: "#A6E22E" }} />
-                <p className="font-body text-[14px] leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+                <span
+                  className="flex-shrink-0 w-1 h-1 rounded-full mt-2.5"
+                  style={{ background: "#A6E22E" }}
+                />
+                <p className="font-body text-[14px] leading-[1.65]" style={{ color: "rgba(255,255,255,0.58)" }}>
                   {d}
                 </p>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
