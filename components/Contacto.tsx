@@ -72,8 +72,8 @@ export default function Contacto() {
                 className="space-y-8"
               >
                 {[
-                  { label: "WhatsApp", href: "https://wa.me/521XXXXXXXXXX", text: "[ Número de WhatsApp ]" },
-                  { label: "Email", href: "mailto:contacto@pgestrategias.com", text: "[ Email de contacto ]" },
+                  { label: "WhatsApp", href: "https://wa.me/5212221215051", text: "+52 222 121 5051" },
+                  { label: "Email", href: "mailto:contacto@pgestrategias.com", text: "contacto@pgestrategias.com" },
                 ].map((item) => (
                   <div key={item.label}>
                     <p
@@ -100,9 +100,7 @@ export default function Contacto() {
                     Oficina
                   </p>
                   <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                    Calle Valencia 131-2, Las Palmas
-                    <br />
-                    Ciudad de México, México
+                    Ciudad de Puebla, México
                   </p>
                 </div>
               </motion.div>

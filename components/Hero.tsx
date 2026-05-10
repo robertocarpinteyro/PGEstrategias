@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { num: "+40", label: "Clientes activos", sub: "negocios creciendo" },
+  { num: "10+", label: "Negocios activos", sub: "activamente creciendo" },
   { num: "3.8×", label: "Retorno promedio", sub: "por cada peso invertido" },
-  { num: "14 días", label: "Tiempo al aire", sub: "de firma a campaña activa" },
+  { num: "3 meses", label: "Compromiso sugerido", sub: "para resultados reales" },
 ];
 
 export default function Hero() {
@@ -50,7 +50,7 @@ export default function Hero() {
             className="font-body text-[11px] tracking-[var(--ls-label)] uppercase mb-8"
             style={{ color: "#A6E22E" }}
           >
-            Growth Partners · Ciudad de México
+            Growth Partners · Ciudad de Puebla
           </motion.p>
 
           <motion.h1
@@ -65,10 +65,12 @@ export default function Hero() {
               letterSpacing: "var(--ls-display)",
             }}
           >
-            Convertimos tu
+            Del primer click,
             <br />
-            inversión en{" "}
-            <em style={{ color: "#A6E22E", fontStyle: "italic" }}>clientes.</em>
+            al cliente{" "}
+            <em style={{ color: "#A6E22E", fontStyle: "italic" }}>recurrente</em>
+            <br />
+            en el segundo mes.
           </motion.h1>
 
           <motion.p
@@ -78,7 +80,7 @@ export default function Hero() {
             className="font-body text-[11px] tracking-[0.16em] uppercase mb-10"
             style={{ color: "rgba(245,245,245,0.38)" }}
           >
-            Paid Media · Producción Audiovisual · Mensajería · Ecosistema Digital
+            El primer mes lanzamos campañas · el segundo optimizamos · el tercero triplicamos lo invertido
           </motion.p>
 
           <motion.div

@@ -110,14 +110,14 @@ export default function Footer() {
                 className="font-body text-[14px] transition-colors duration-500 hover:text-white"
                 style={{ color: "rgba(245,245,245,0.5)" }}
               >
-                [ Email de contacto ]
+                contacto@pgestrategias.com
               </a>
               <a
-                href="https://wa.me/521XXXXXXXXXX"
+                href="https://wa.me/5212221215051"
                 className="font-body text-[14px] transition-colors duration-500 hover:text-white"
                 style={{ color: "rgba(245,245,245,0.5)" }}
               >
-                [ WhatsApp ]
+                +52 222 121 5051
               </a>
             </div>
             <p
@@ -127,9 +127,7 @@ export default function Footer() {
               Oficina
             </p>
             <p className="font-body text-[13px] leading-relaxed" style={{ color: "rgba(245,245,245,0.4)" }}>
-              Calle Valencia 131-2, Las Palmas
-              <br />
-              Ciudad de México, México
+              Ciudad de Puebla, México
             </p>
           </div>
         </div>
@@ -140,7 +138,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
         >
           <p className="font-body text-[11px]" style={{ color: "rgba(245,245,245,0.2)" }}>
-            © 2026 PG Estrategias · Growth Partners · CDMX
+            © 2026 PG Estrategias · Growth Partners · Puebla
           </p>
           <p className="font-body text-[11px]" style={{ color: "rgba(245,245,245,0.15)" }}>
             Todos los precios en MXN, sin IVA.

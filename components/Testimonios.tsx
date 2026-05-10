@@ -8,17 +8,17 @@ const testimonios = [
     id: 1,
     video: "/videos/testimonio-1.mp4",
     thumbnail: "/images/testimonio-1-thumb.jpg",
-    quote: "En 45 días teníamos más prospectos de los que podíamos atender.",
-    nombre: "Cliente 1",
-    industria: "Industria · CDMX",
+    quote: "Sé que ustedes son un negocio confiable, en el que les interesa que sus clientes crezcan para que ustedes también crezcan.",
+    nombre: "Dr. Proctología",
+    industria: "Proctología · Puebla",
   },
   {
     id: 2,
     video: "/videos/testimonio-2.mp4",
     thumbnail: "/images/testimonio-2-thumb.jpg",
-    quote: "Por primera vez siento que mi presupuesto de publicidad realmente funciona.",
-    nombre: "Cliente 2",
-    industria: "Industria · CDMX",
+    quote: "Hemos triplicado el número de contratos firmados.",
+    nombre: "Ex Hacienda de San Bartolo",
+    industria: "Bienes Raíces · Puebla",
   },
 ];
 
@@ -175,11 +175,10 @@ export default function Testimonios() {
               style={{ borderLeft: "2px solid #A6E22E" }}
             >
               <p className="font-body text-[17px] italic leading-relaxed" style={{ color: "rgba(13,13,13,0.7)" }}>
-                &ldquo;El primer mes recuperamos lo invertido.
-                El segundo, duplicamos clientes.&rdquo;
+                &ldquo;Hemos triplicado el número de contratos firmados.&rdquo;
               </p>
               <p className="font-body text-[12px] mt-3" style={{ color: "rgba(13,13,13,0.38)" }}>
-                — Cliente de Tracción · Servicios
+                — Ex Hacienda de San Bartolo · Bienes Raíces · Puebla
               </p>
             </motion.div>
           </div>
