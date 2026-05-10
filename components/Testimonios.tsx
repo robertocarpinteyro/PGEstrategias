@@ -8,6 +8,7 @@ const testimonios = [
     id: 1,
     video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778399000/DrManuelPGTestimonio_ar6neh.mp4",
     thumbnail: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778399766/3e0ed3ac-bcb5-493c-80c9-f505a37a38e3_uqfo1h.png",
+    thumbnailV: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778400341/ChatGPT_Image_10_may_2026_02_05_25_a.m_tgohn3.png",
     quote: "Sé que ustedes son un negocio confiable, en el que les interesa que sus clientes crezcan para que ustedes también crezcan.",
     nombre: "Dr. Manuel",
     industria: "Proctología · Puebla",
@@ -16,6 +17,7 @@ const testimonios = [
     id: 2,
     video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778398752/ExHaciendaPGTestimonio_ut7ja4.mp4",
     thumbnail: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778399817/ChatGPT_Image_10_may_2026_01_56_51_a.m_onxhrw.png",
+    thumbnailV: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778400307/ChatGPT_Image_10_may_2026_02_04_57_a.m_gdkjn9.png",
     quote: "Hemos triplicado el número de contratos firmados.",
     nombre: "Ex Hacienda de San Bartolo",
     industria: "Bienes Raíces · Puebla",
@@ -82,9 +84,15 @@ function TestimonioCard({ t, index }: { t: typeof testimonios[0]; index: number 
           style={{ aspectRatio: "9/16", maxHeight: "520px" }}
           onClick={() => setShowModal(true)}
         >
+          {/* Horizontal thumbnail — desktop */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center hidden md:block"
             style={{ backgroundImage: `url(${t.thumbnail})`, backgroundColor: "#1a1a1a" }}
+          />
+          {/* Vertical thumbnail — móvil */}
+          <div
+            className="absolute inset-0 bg-cover bg-center block md:hidden"
+            style={{ backgroundImage: `url(${t.thumbnailV})`, backgroundColor: "#1a1a1a" }}
           />
           <div
             className="absolute inset-0 transition-opacity duration-500"
