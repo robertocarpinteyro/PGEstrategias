@@ -166,21 +166,6 @@ export default function Testimonios() {
               </motion.h2>
             </div>
 
-            {/* Pull quote */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={headInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="pl-6"
-              style={{ borderLeft: "2px solid #A6E22E" }}
-            >
-              <p className="font-body text-[17px] italic leading-relaxed" style={{ color: "rgba(13,13,13,0.7)" }}>
-                &ldquo;Hemos triplicado el número de contratos firmados.&rdquo;
-              </p>
-              <p className="font-body text-[12px] mt-3" style={{ color: "rgba(13,13,13,0.38)" }}>
-                — Ex Hacienda de San Bartolo · Bienes Raíces · Puebla
-              </p>
-            </motion.div>
           </div>
         </div>
 

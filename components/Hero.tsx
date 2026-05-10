@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react";
 const stats = [
   { num: "10+", label: "Negocios activos", sub: "activamente creciendo" },
   { num: "3.8×", label: "Retorno promedio", sub: "por cada peso invertido" },
-  { num: "3 meses", label: "Compromiso sugerido", sub: "para resultados reales" },
+  { num: "14 días", label: "Tiempo al aire", sub: "de firma a campaña activa" },
 ];
 
 export default function Hero() {
@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: textY }}
-        className="relative z-[3] h-full flex flex-col justify-center px-8 md:px-16"
+        className="relative z-[3] h-full flex flex-col justify-center px-8 md:px-16 pt-16 pb-28"
       >
         <div className="max-w-[1300px] mx-auto w-full">
           <motion.p
@@ -65,12 +65,10 @@ export default function Hero() {
               letterSpacing: "var(--ls-display)",
             }}
           >
-            Del primer click,
+            Convertimos tu
             <br />
-            al cliente{" "}
-            <em style={{ color: "#A6E22E", fontStyle: "italic" }}>recurrente</em>
-            <br />
-            en el segundo mes.
+            inversión en{" "}
+            <em style={{ color: "#A6E22E", fontStyle: "italic" }}>clientes.</em>
           </motion.h1>
 
           <motion.p

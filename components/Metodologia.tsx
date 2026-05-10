@@ -75,11 +75,11 @@ export default function Metodologia() {
                 letterSpacing: "var(--ls-h2)",
               }}
             >
-              Del primer clic
+              Del primer click
               <br />
-              al cliente recurrente.
+              al cliente recurrente
               <br />
-              <em style={{ color: "#A6E22E", fontStyle: "italic" }}>En 14 días.</em>
+              <em style={{ color: "#A6E22E", fontStyle: "italic" }}>en 2 meses.</em>
             </motion.h2>
 
             <motion.p

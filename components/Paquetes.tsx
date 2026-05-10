@@ -239,7 +239,7 @@ export default function Paquetes() {
             >
               Todos los precios en pesos mexicanos, sin IVA.
               <br />
-              Compromiso mínimo de 3 meses.
+              Compromiso sugerido de 3 meses.
             </motion.p>
           </div>
         </div>
