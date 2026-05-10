@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const HERO_VIDEO =
-  "https://res.cloudinary.com/dieszqcrn/video/upload/v1778398024/hf_20260510_071746_f13b6e1d-188c-45e6-81af-bb949d4c4c7e_m5advd.mp4";
+  "https://res.cloudinary.com/dieszqcrn/video/upload/v1778401407/magnific_subtle-idle-animation-cha_2954420067_qmtsp2.mp4";
 
 const stats = [
   { num: "10+", label: "Negocios activos", sub: "activamente creciendo" },
