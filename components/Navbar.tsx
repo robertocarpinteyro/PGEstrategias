@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useContactMenu } from "@/context/ContactMenuContext";
+
+const MSG_NAVBAR = "Hola, me interesa saber más sobre los servicios de PG Estrategias. ¿Podemos hablar?";
 
 const links = [
   { label: "Servicios", href: "#servicios" },
@@ -14,6 +17,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { open: openContact } = useContactMenu();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -92,13 +96,13 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-5">
-            <a
-              href="#contacto"
+            <button
+              onClick={() => openContact(MSG_NAVBAR)}
               className="hidden md:block font-body text-[12px] text-white border px-5 py-2.5 transition-all duration-500 hover:bg-white hover:text-pg-black tracking-wide"
               style={{ borderColor: "rgba(255,255,255,0.3)" }}
             >
               Agenda una llamada
-            </a>
+            </button>
             <button
               className="md:hidden flex flex-col gap-1.5 p-1"
               onClick={() => setMenuOpen(true)}
@@ -154,9 +158,8 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contacto"
-                onClick={() => setMenuOpen(false)}
+              <motion.button
+                onClick={() => { setMenuOpen(false); openContact(MSG_NAVBAR); }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.38, duration: 0.5 }}
@@ -164,7 +167,7 @@ export default function Navbar() {
                 style={{ background: "#A6E22E" }}
               >
                 Agenda una llamada
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         )}

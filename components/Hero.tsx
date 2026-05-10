@@ -2,6 +2,9 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useContactMenu } from "@/context/ContactMenuContext";
+
+const MSG_HERO = "Hola, me interesa hacer crecer mi negocio con PG Estrategias. ¿Podemos hablar?";
 
 const HERO_VIDEO =
   "https://res.cloudinary.com/dieszqcrn/video/upload/v1778401407/magnific_subtle-idle-animation-cha_2954420067_qmtsp2.mp4";
@@ -20,6 +23,7 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
+  const { open: openContact } = useContactMenu();
   const [scrollVisible, setScrollVisible] = useState(true);
   useEffect(() => {
     const onScroll = () => setScrollVisible(window.scrollY < 80);
@@ -130,13 +134,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="#contacto"
+            <button
+              onClick={() => openContact(MSG_HERO)}
               className="font-title font-bold text-pg-black px-8 py-3.5 text-[13px] tracking-wide transition-opacity duration-500 hover:opacity-80"
               style={{ background: "#A6E22E" }}
             >
               Quiero crecer
-            </a>
+            </button>
             <a
               href="#paquetes"
               className="font-body text-pg-light border px-8 py-3.5 text-[13px] tracking-wide transition-colors duration-500 hover:border-white"

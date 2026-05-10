@@ -2,6 +2,14 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useContactMenu } from "@/context/ContactMenuContext";
+
+const WA_MSGS: Record<string, string> = {
+  ignicion: "Hola, me interesa el plan IGNICIÓN de PG Estrategias ($11,000/mes). ¿Podemos agendar una llamada?",
+  traccion: "Hola, me interesa el plan TRACCIÓN de PG Estrategias ($16,000/mes). ¿Podemos agendar una llamada?",
+  dominio: "Hola, me interesa el plan DOMINIO de PG Estrategias ($27,000/mes). ¿Podemos agendar una llamada?",
+  elegir: "Hola, necesito ayuda para elegir el plan correcto de PG Estrategias para mi negocio. ¿Podemos hablar?",
+};
 
 const checkIcon = (
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-0.5">
@@ -81,7 +89,7 @@ const planes = [
   },
 ];
 
-function PlanCard({ plan, index }: { plan: typeof planes[0]; index: number }) {
+function PlanCard({ plan, index, onCta }: { plan: typeof planes[0]; index: number; onCta: () => void }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -162,9 +170,9 @@ function PlanCard({ plan, index }: { plan: typeof planes[0]; index: number }) {
       </ul>
 
       {/* CTA */}
-      <a
-        href="#contacto"
-        className="w-full py-3.5 text-center font-title font-bold text-[13px] tracking-wide transition-all duration-500 block"
+      <button
+        onClick={onCta}
+        className="w-full py-3.5 text-center font-title font-bold text-[13px] tracking-wide transition-all duration-500"
         style={{
           background: plan.destacado ? "#A6E22E" : "transparent",
           border: plan.destacado ? "none" : "1px solid rgba(255,255,255,0.25)",
@@ -182,7 +190,7 @@ function PlanCard({ plan, index }: { plan: typeof planes[0]; index: number }) {
         }}
       >
         {plan.cta}
-      </a>
+      </button>
     </motion.div>
   );
 }
@@ -191,6 +199,7 @@ export default function Paquetes() {
   const [comparOpen, setComparOpen] = useState(false);
   const headRef = useRef(null);
   const headInView = useInView(headRef, { once: true, margin: "-80px" });
+  const { open: openContact } = useContactMenu();
 
   return (
     <section id="paquetes" className="py-40" style={{ background: "#0D0D0D" }}>
@@ -247,7 +256,12 @@ export default function Paquetes() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {planes.map((plan, i) => (
-            <PlanCard key={plan.id} plan={plan} index={i} />
+            <PlanCard
+              key={plan.id}
+              plan={plan}
+              index={i}
+              onCta={() => openContact(WA_MSGS[plan.id])}
+            />
           ))}
         </div>
 
@@ -347,13 +361,13 @@ export default function Paquetes() {
               </p>
             </div>
             <div className="md:text-right">
-              <a
-                href="#contacto"
+              <button
+                onClick={() => openContact(WA_MSGS.elegir)}
                 className="font-title font-bold text-pg-black text-[13px] tracking-wide inline-flex items-center gap-2 px-8 py-3.5 transition-opacity duration-500 hover:opacity-80"
                 style={{ background: "#A6E22E" }}
               >
                 Agendar llamada gratuita
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>

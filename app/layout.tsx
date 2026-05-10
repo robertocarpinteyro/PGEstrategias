@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ClientProviders from "@/components/ClientProviders";
 
 export const metadata: Metadata = {
   title: "PG Estrategias — Growth Partners",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="grain">
-        {children}
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
