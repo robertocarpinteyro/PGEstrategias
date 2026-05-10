@@ -52,9 +52,9 @@ const planes = [
       "Página de ventas + CRM + hosting 6 meses",
       "Configuración técnica completa",
       "Perfil de Google optimizado + estrategia de reseñas",
-      "Videollamada estratégica quincenal (puede ser presencial)",
+      "Videollamada estratégica quincenal",
       "Consultoría de crecimiento mensual",
-      "Reporte quincenal con análisis de qué anuncios funcionan",
+      "Reporte quincenal",
     ],
   },
   {
