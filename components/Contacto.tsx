@@ -100,7 +100,7 @@ export default function Contacto() {
                     Oficina
                   </p>
                   <p className="font-body text-[15px] leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                    Ciudad de Puebla, México
+                    Calle Valencia 131-2, Las Palmas,<br />Puebla, México
                   </p>
                 </div>
               </motion.div>

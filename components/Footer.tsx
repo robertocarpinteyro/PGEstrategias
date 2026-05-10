@@ -127,7 +127,7 @@ export default function Footer() {
               Oficina
             </p>
             <p className="font-body text-[13px] leading-relaxed" style={{ color: "rgba(245,245,245,0.4)" }}>
-              Ciudad de Puebla, México
+              Calle Valencia 131-2, Las Palmas,<br />Puebla, México
             </p>
           </div>
         </div>
