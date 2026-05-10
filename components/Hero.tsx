@@ -3,6 +3,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
+const HERO_VIDEO =
+  "https://res.cloudinary.com/dieszqcrn/video/upload/v1778398024/hf_20260510_071746_f13b6e1d-188c-45e6-81af-bb949d4c4c7e_m5advd.mp4";
+
 const stats = [
   { num: "10+", label: "Negocios activos", sub: "activamente creciendo" },
   { num: "3.8×", label: "Retorno promedio", sub: "por cada peso invertido" },
@@ -13,7 +16,6 @@ export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 0.92]);
 
   const [scrollVisible, setScrollVisible] = useState(true);
   useEffect(() => {
@@ -23,26 +25,44 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0 bg-pg-black">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay muted loop playsInline
-          poster="/videos/hero-poster.jpg"
-        >
-          <source src="/videos/hero.webm" type="video/webm" />
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <motion.div className="absolute inset-0 z-[1] bg-pg-black" style={{ opacity: overlayOpacity }} />
+    <section ref={ref} className="relative h-screen overflow-hidden bg-pg-black">
 
-      {/* Content */}
+      {/* Video — pegado a la derecha */}
+      <video
+        className="absolute top-0 right-0 h-full object-cover z-[1]"
+        style={{ width: "65%" }}
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
+
+      {/* Degradado negro→transparente de izquierda a derecha */}
+      <div
+        className="absolute inset-0 z-[2]"
+        style={{
+          background:
+            "linear-gradient(to right, #0D0D0D 28%, rgba(13,13,13,0.92) 45%, rgba(13,13,13,0.4) 65%, transparent 100%)",
+        }}
+      />
+
+      {/* Fade inferior para el stat strip */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-[2]"
+        style={{
+          height: "140px",
+          background: "linear-gradient(to top, #0D0D0D 55%, transparent 100%)",
+        }}
+      />
+
+      {/* Contenido — izquierda */}
       <motion.div
         style={{ y: textY }}
         className="relative z-[3] h-full flex flex-col justify-center px-8 md:px-16 pt-16 pb-28"
       >
-        <div className="max-w-[1300px] mx-auto w-full">
+        <div className="w-full max-w-[580px]">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -110,7 +130,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: scrollVisible ? 0.35 : 0 }}
         transition={{ duration: 0.5, delay: 1.0 }}
-        className="absolute bottom-28 right-10 flex flex-col items-center gap-3"
+        className="absolute bottom-28 right-10 flex flex-col items-center gap-3 z-[3]"
       >
         <span
           className="font-body text-[10px] tracking-[0.2em] uppercase text-white"
