@@ -7,7 +7,7 @@ const testimonios = [
   {
     id: 1,
     video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778399000/DrManuelPGTestimonio_ar6neh.mp4",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778399766/3e0ed3ac-bcb5-493c-80c9-f505a37a38e3_uqfo1h.png",
     quote: "Sé que ustedes son un negocio confiable, en el que les interesa que sus clientes crezcan para que ustedes también crezcan.",
     nombre: "Dr. Manuel",
     industria: "Proctología · Puebla",
@@ -15,7 +15,7 @@ const testimonios = [
   {
     id: 2,
     video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778398752/ExHaciendaPGTestimonio_ut7ja4.mp4",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dieszqcrn/image/upload/v1778399817/ChatGPT_Image_10_may_2026_01_56_51_a.m_onxhrw.png",
     quote: "Hemos triplicado el número de contratos firmados.",
     nombre: "Ex Hacienda de San Bartolo",
     industria: "Bienes Raíces · Puebla",
