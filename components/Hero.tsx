@@ -6,6 +6,9 @@ import { useRef, useEffect, useState } from "react";
 const HERO_VIDEO =
   "https://res.cloudinary.com/dieszqcrn/video/upload/v1778401407/magnific_subtle-idle-animation-cha_2954420067_qmtsp2.mp4";
 
+const HERO_VIDEO_MOBILE =
+  "https://res.cloudinary.com/dieszqcrn/video/upload/v1778431633/magnific_subtle-idle-animation-cha_2955966083_cgb5uq.mp4";
+
 const stats = [
   { num: "10+", label: "Negocios activos", sub: "activamente creciendo" },
   { num: "3.8×", label: "Retorno promedio", sub: "por cada peso invertido" },
@@ -27,9 +30,20 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-screen overflow-hidden bg-pg-black">
 
-      {/* Video — pegado a la derecha */}
+      {/* Video móvil — fondo completo en pantallas < md */}
       <video
-        className="absolute top-0 right-0 h-full object-cover z-[1]"
+        className="md:hidden absolute inset-0 w-full h-full object-cover z-[1]"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={HERO_VIDEO_MOBILE} type="video/mp4" />
+      </video>
+
+      {/* Video desktop — pegado a la derecha en md+ */}
+      <video
+        className="hidden md:block absolute top-0 right-0 h-full object-cover z-[1]"
         style={{ width: "65%" }}
         autoPlay
         muted
@@ -39,9 +53,18 @@ export default function Hero() {
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
 
-      {/* Degradado negro→transparente de izquierda a derecha */}
+      {/* Degradado móvil — oscurece todo para legibilidad del texto */}
       <div
-        className="absolute inset-0 z-[2]"
+        className="md:hidden absolute inset-0 z-[2]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(13,13,13,0.65) 0%, rgba(13,13,13,0.45) 50%, rgba(13,13,13,0.8) 100%)",
+        }}
+      />
+
+      {/* Degradado desktop — negro→transparente de izquierda a derecha */}
+      <div
+        className="hidden md:block absolute inset-0 z-[2]"
         style={{
           background:
             "linear-gradient(to right, #0D0D0D 28%, rgba(13,13,13,0.92) 45%, rgba(13,13,13,0.4) 65%, transparent 100%)",
