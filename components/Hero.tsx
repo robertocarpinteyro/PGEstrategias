@@ -79,10 +79,10 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="font-title text-pg-light mb-8"
             style={{
-              fontSize: "var(--t-display)",
+              fontSize: "clamp(40px, 5vw, 80px)",
               fontWeight: 400,
-              lineHeight: "var(--lh-display)",
-              letterSpacing: "var(--ls-display)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.03em",
             }}
           >
             Convertimos tu

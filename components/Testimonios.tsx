@@ -6,16 +6,16 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 const testimonios = [
   {
     id: 1,
-    video: "/videos/testimonio-1.mp4",
-    thumbnail: "/images/testimonio-1-thumb.jpg",
+    video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778399000/DrManuelPGTestimonio_ar6neh.mp4",
+    thumbnail: "",
     quote: "Sé que ustedes son un negocio confiable, en el que les interesa que sus clientes crezcan para que ustedes también crezcan.",
-    nombre: "Dr. Proctología",
+    nombre: "Dr. Manuel",
     industria: "Proctología · Puebla",
   },
   {
     id: 2,
-    video: "/videos/testimonio-2.mp4",
-    thumbnail: "/images/testimonio-2-thumb.jpg",
+    video: "https://res.cloudinary.com/dieszqcrn/video/upload/v1778398752/ExHaciendaPGTestimonio_ut7ja4.mp4",
+    thumbnail: "",
     quote: "Hemos triplicado el número de contratos firmados.",
     nombre: "Ex Hacienda de San Bartolo",
     industria: "Bienes Raíces · Puebla",
