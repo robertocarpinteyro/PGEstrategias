@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useContactMenu } from "@/context/ContactMenuContext";
 
 const MSG_NAVBAR = "Hola, me interesa saber más sobre los servicios de PG Estrategias. ¿Podemos hablar?";
@@ -18,6 +19,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { open: openContact } = useContactMenu();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const hrefFor = useMemo(
+    () => (hash: string) => (isHome ? hash : `/${hash}`),
+    [isHome]
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -26,6 +33,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!isHome) { setActiveSection(""); return; }
     const sectionIds = links.map((l) => l.href.replace("#", ""));
     const observers: IntersectionObserver[] = [];
     sectionIds.forEach((id) => {
@@ -39,7 +47,7 @@ export default function Navbar() {
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -60,7 +68,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-8 md:px-16 h-16 max-w-[1300px] mx-auto">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <svg width="26" height="26" viewBox="0 0 28 28" fill="none" className="text-pg-lime flex-shrink-0">
               <rect x="2" y="18" width="5" height="8" fill="currentColor" />
               <rect x="9" y="12" width="5" height="14" fill="currentColor" />
@@ -77,7 +85,7 @@ export default function Navbar() {
             {links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={hrefFor(link.href)}
                 className="relative font-body text-[12px] tracking-[0.08em] transition-colors duration-500"
                 style={{
                   color: activeSection === link.href.replace("#", "")
@@ -142,7 +150,7 @@ export default function Navbar() {
               {links.map((link, i) => (
                 <motion.a
                   key={link.href}
-                  href={link.href}
+                  href={hrefFor(link.href)}
                   onClick={() => setMenuOpen(false)}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
