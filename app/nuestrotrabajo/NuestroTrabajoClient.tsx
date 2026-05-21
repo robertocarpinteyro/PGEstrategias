@@ -366,7 +366,7 @@ export default function NuestroTrabajoClient() {
             </div>
 
             <div className="relative grid md:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
-              <div className="md:col-span-5">
+              <div className="md:col-span-5 min-w-0">
                 <div className="reveal-up flex items-center gap-3 mb-6">
                   <span className="w-8 h-px bg-pg-lime" />
                   <span className="font-body text-[10px] tracking-[0.22em] uppercase text-pg-lime">
@@ -374,7 +374,7 @@ export default function NuestroTrabajoClient() {
                   </span>
                 </div>
                 <h2
-                  className="reveal-up font-title text-white"
+                  className="reveal-up font-title text-white break-words hyphens-auto"
                   style={{
                     fontSize: "var(--t-h2)",
                     lineHeight: "var(--lh-h2)",
