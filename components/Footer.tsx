@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 const navLinks = [
   { label: "Servicios", href: "#servicios" },
   { label: "Metodología", href: "#metodologia" },
@@ -28,6 +30,9 @@ function LinkedInIcon() {
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const hrefFor = (hash: string) => (isHome ? hash : `/${hash}`);
   return (
     <footer style={{ background: "#0D0D0D", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-[1300px] mx-auto px-8 md:px-16 pt-24 pb-10">
@@ -37,7 +42,7 @@ export default function Footer() {
 
           {/* Brand — 4 cols */}
           <div className="md:col-span-4">
-            <a href="#" className="flex items-center gap-2.5 mb-6 group">
+            <a href="/" className="flex items-center gap-2.5 mb-6 group">
               <svg width="24" height="24" viewBox="0 0 28 28" fill="none" style={{ color: "#A6E22E" }}>
                 <rect x="2" y="18" width="5" height="8" fill="currentColor" />
                 <rect x="9" y="12" width="5" height="14" fill="currentColor" />
@@ -86,7 +91,7 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={hrefFor(link.href)}
                   className="font-body text-[14px] transition-colors duration-500 hover:text-white w-fit"
                   style={{ color: "rgba(245,245,245,0.5)" }}
                 >

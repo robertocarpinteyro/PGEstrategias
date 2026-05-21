@@ -33,7 +33,7 @@ const CATEGORIES: Category[] = [
       "Diseñados con un solo objetivo: secuestrar la atención en los primeros 0.8 segundos, mantener al usuario pegado hasta el final y empujarlo a tomar acción. Ritmo quirúrgico, hooks probados y una estructura pensada para convertir scroll en clientes.",
     reels: [
       { src: "https://res.cloudinary.com/djduba5fd/video/upload/q_auto/f_auto/v1779379727/ad_5_vecrital_2_b2fksl.mp4" },
-      { src: null, label: "Próximamente" },
+      { src: "https://res.cloudinary.com/djduba5fd/video/upload/q_auto/f_auto/v1779380437/REEL_1_-_POD_248_1_upajtt.mp4" },
     ],
   },
   {
