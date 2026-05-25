@@ -33,7 +33,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 const heroStats = [
-  { label: "Trayectoria", value: "33 años", sub: "Legado Autos El Ángel" },
   { label: "Cobertura", value: "2 sucursales", sub: "Angelópolis · Chachapa" },
   { label: "Duración", value: "90 días", sub: "Campaña intensiva 360" },
   { label: "Escalera de producto", value: "$138K – $1.9M", sub: "Daily a aspiracional" },
@@ -108,19 +107,29 @@ const sistema = [
     title: "Comunidad + TikTok",
     desc: "Rodadas y eventos con clubs de autos de Puebla que convierten a Zenith en referente cultural automotriz.",
   },
+  {
+    icon: "🏁",
+    title: "Eventos y patrocinios",
+    desc: "Presencia como patrocinador en eventos deportivos, carreras y torneos de la ciudad, activando la marca donde se reúne el público objetivo.",
+  },
 ];
 
 const fases = [
   {
     num: "01",
     mes: "Mes 1 — Cimientos",
-    honorario: "$25,000 MXN",
+    honorario: "$29,000 MXN",
     foco: "Estrategia, investigación y setup",
     items: [
       "Estudio de mercado + 200–300 encuestas en campo",
+      "Estrategia digital y de campo según el estudio de mercado",
       "Branding: manual de marca y tono por pilar",
       "Setup de paid media en 4 plataformas",
-      "Medición, KPIs y pre-producción del video institucional",
+      "Medición y KPIs por canal",
+      "Pre-producción: guiones, scouting de locaciones, storyboard/animatic",
+      "Hasta 10 artes para publicidad en piso",
+      "5 artes animadas en motion graphics para pantallas/stories",
+      "Reunión quincenal previo al lanzamiento",
     ],
   },
   {
@@ -129,7 +138,7 @@ const fases = [
     honorario: "$60,000 MXN",
     foco: "Producción y activación",
     items: [
-      "Rodaje y entrega del video institucional + cortes",
+      "Cine minuto (video institucional) + 4 reels principales + 6 reels adicionales",
       "4+ creatividades de espectacular por corredor",
       "Lanzamiento y optimización de paid media",
       "Primera rodada con clubs de autos de Puebla",
@@ -138,12 +147,13 @@ const fases = [
   {
     num: "03",
     mes: "Mes 3 — Amplificación y cierre",
-    honorario: "$17,000 MXN",
+    honorario: "$20,000 MXN",
     foco: "Escalado y consolidación",
     items: [
       "Rotación de espectaculares y puntos Tier 2/3",
       "Escalado de campañas de mejor desempeño",
       "Rodada insignia masiva como anfitrión",
+      "2 reels de rodada + 6 reels para redes sociales",
       "Reporte ejecutivo y propuesta de continuidad",
     ],
   },
@@ -161,9 +171,9 @@ const volumen = [
 ];
 
 const honorarios = [
-  { mes: "Mes 1", concepto: "Cimientos — estrategia, investigación, branding y setup", monto: "$25,000" },
+  { mes: "Mes 1", concepto: "Cimientos — estrategia, investigación, branding y setup", monto: "$29,000" },
   { mes: "Mes 2", concepto: "Lanzamiento — video, espectaculares, paid media y activaciones", monto: "$60,000" },
-  { mes: "Mes 3", concepto: "Amplificación y cierre — optimización, rodada insignia y cierre", monto: "$17,000" },
+  { mes: "Mes 3", concepto: "Amplificación y cierre — optimización, rodada insignia y cierre", monto: "$20,000" },
 ];
 
 const pasos = [
@@ -280,8 +290,8 @@ export default function ZenithMotorsClient() {
                 style={{ color: TEXT_DIM }}
               >
                 Una campaña intensiva de{" "}
-                <span className="text-white font-medium">90 días</span> para convertir 33 años de
-                trayectoria y una escalera de producto única en{" "}
+                <span className="text-white font-medium">90 días</span> para convertir una escalera
+                de producto única y presencia en dos corredores en{" "}
                 <span className="text-white font-medium">visibilidad real</span>: el referente de
                 seminuevos curados para el comprador poblano exigente.
               </motion.p>
@@ -518,7 +528,7 @@ export default function ZenithMotorsClient() {
             className="font-title text-pg-light mb-4"
             style={{ fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 400, lineHeight: 1, letterSpacing: "-0.02em" }}
           >
-            Cuatro canales,
+            Cinco canales,
             <br />
             <em style={{ color: LIME, fontStyle: "italic" }}>un solo sistema.</em>
           </motion.h2>
@@ -526,7 +536,7 @@ export default function ZenithMotorsClient() {
             Medios físicos, audiovisual, paid media y comunidad operan integrados, no por separado.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
             {sistema.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -739,7 +749,7 @@ export default function ZenithMotorsClient() {
                 className="font-title text-right whitespace-nowrap"
                 style={{ color: LIME, fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 400 }}
               >
-                $102,000 <span className="text-[14px]" style={{ color: TEXT_DIM }}>MXN</span>
+                $109,000 <span className="text-[14px]" style={{ color: TEXT_DIM }}>MXN</span>
               </span>
             </div>
           </div>
