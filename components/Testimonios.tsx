@@ -24,7 +24,7 @@ const testimonios = [
   },
   {
     id: 3,
-    video: "https://res.cloudinary.com/djduba5fd/video/upload/q_auto/f_auto/v1779507243/05.1___MetaAds_yrtgmr.mp4",
+    video: "https://res.cloudinary.com/djduba5fd/video/upload/q_auto/f_auto/v1779761319/Testimonio_Manuel_gm9pnz.mp4",
     thumbnail: "https://res.cloudinary.com/djduba5fd/image/upload/q_auto/f_auto/v1779761378/ChatGPT_Image_25_may_2026_08_09_30_p.m_d7citi.png",
     thumbnailV: "https://res.cloudinary.com/djduba5fd/image/upload/q_auto/f_auto/v1779761346/ChatGPT_Image_15_may_2026_01_28_48_p.m_1_n6ddjd.png",
     quote: "Una fotografía no puede enseñar lo que un sistema audiovisual estratégico sí…",
