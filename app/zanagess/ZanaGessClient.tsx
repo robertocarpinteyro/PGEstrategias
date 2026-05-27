@@ -40,7 +40,7 @@ const objectives = [
   },
   {
     num: "04",
-    text: "Expandir su presencia de marca en el segmento B2B de distribución de hortalizas a nivel nacional e internacional.",
+    text: "Expandir su presencia de marca en el segmento B2B de distribución de zanahoria a nivel nacional e internacional.",
   },
 ];
 
@@ -97,7 +97,7 @@ const impacts = [
   {
     accent: ACCENT.lime,
     title: "Mayor visibilidad de marca",
-    desc: "Reconocimiento de marca entre compradores empresariales de hortalizas, tanto en México como en Estados Unidos.",
+    desc: "Reconocimiento de marca entre compradores empresariales de zanahoria, tanto en México como en Estados Unidos.",
   },
   {
     accent: ACCENT.amber,
@@ -319,7 +319,7 @@ export default function ZanaGessClient() {
           >
             Cuatro objetivos estratégicos que guían cada decisión de la propuesta,
             orientados a posicionar a Zana Gess como el proveedor B2B de referencia
-            en el mercado de hortalizas.
+            en el mercado de zanahoria.
           </p>
 
           <div className="flex flex-col gap-4">
@@ -543,7 +543,7 @@ export default function ZanaGessClient() {
           >
             Esta estrategia será un catalizador para que Zana Gess escale su operación,
             concrete nuevas oportunidades de negocio y consolide su posición como líder
-            en distribución de zanahoria y hortalizas selectas.
+            en distribución de zanahoria.
           </p>
 
           <div
@@ -609,7 +609,7 @@ export default function ZanaGessClient() {
             >
               Esta estrategia publicitaria será un catalizador para que Zana Gess
               escale su operación y consolide su posición como líder en la distribución
-              de hortalizas para el exigente mercado B2B.
+              de zanahoria para el exigente mercado B2B.
             </p>
             <p
               className="font-body text-[12px] uppercase tracking-[var(--ls-label)]"
