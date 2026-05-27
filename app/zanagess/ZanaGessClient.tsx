@@ -20,7 +20,7 @@ function AccentBar({ color }: { color: string }) {
 }
 
 const stats = [
-  { num: "7", label: "Entregables clave" },
+  { num: "9", label: "Entregables clave" },
   { num: "4", label: "Objetivos estratégicos" },
   { num: "6", label: "Tácticas de impacto" },
 ];
@@ -91,6 +91,8 @@ const deliverables = [
   { icon: "◉", text: "Google Business Profile optimizado" },
   { icon: "◇", text: "Configuración y operación inicial de WhatsApp Business" },
   { icon: "◆", text: "Subcontratación de especialista para expansión estratégica" },
+  { icon: "▷", text: "4 Reels principales" },
+  { icon: "▸", text: "6 Reels adicionales" },
 ];
 
 const impacts = [
@@ -461,7 +463,7 @@ export default function ZanaGessClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            7 entregables,
+            9 entregables,
             <br />
             <em style={{ color: "#A6E22E", fontStyle: "italic" }}>un solo resultado.</em>
           </h2>
