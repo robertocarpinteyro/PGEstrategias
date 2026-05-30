@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import ZenithMotorsClient from "./ZenithMotorsClient";
+import ZenithInversionClient from "./ZenithMotorsClient";
 
 export const metadata: Metadata = {
-  title: "Propuesta de Campaña 360 — Zenith Motors · PG Estrategias",
+  title: "Propuesta de Inversión Publicitaria — Zenith Motors · PG Estrategias",
   description:
-    "Campaña intensiva de 90 días para Zenith Motors. Síntesis estratégica: posicionamiento boutique de seminuevos, pilares de comunicación, sistema 360 e inversión.",
+    "Propuesta de producción audiovisual y estrategia digital para Zenith Motors. Dos opciones de inversión: Live Action ($49K) e IA ($30K), con paid media y OOH.",
 };
 
-export default function ZenithMotorsPage() {
-  return <ZenithMotorsClient />;
+export default function ZenithInversionPage() {
+  return <ZenithInversionClient />;
 }
